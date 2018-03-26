@@ -41,7 +41,7 @@
     </div>
 
     <div class="form-group">
-        <label for="duration_type" class="col-md-4" style="text-align:right;">Gender</label>
+        <label for="duration_type" class="col-md-4" style="text-align:right;">Instructor</label>
         <div class="col-md-6">
             <select name="instructor_id" class="form-control">
                 @foreach($instructors as $instructor)

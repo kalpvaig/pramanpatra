@@ -47,7 +47,13 @@ class CertificateController extends Controller
     }
 
     public function show($id){
-        $certificate = \App\Certificate::find($id);
+        $certificate = \DB::table('certificates')
+        ->join('students','students.id','=','student_id')
+        ->join('courses','courses.id','=','course_id')
+        ->select('courses.name as course_name', 'students.photo_url as student_photo_url', 'certificates.id as id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','certificates.valid_from' )
+        ->where('certificates.id','=',$id)
+        ->first();
+
         return view('certificate.show',compact('certificate'));
     }
 

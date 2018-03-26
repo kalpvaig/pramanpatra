@@ -13,7 +13,7 @@ Database Creation, run following command in the root directory of the project
 
 Edit Admin Username and password from database/seeds/AdminSeeder.php and Run following command
 
-`php artisan db:seed`
+`php artisan db:seed --class="AdminSeeder"`
 
 ## Using Praman Patra
 
