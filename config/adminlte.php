@@ -106,15 +106,15 @@ return [
     */
 
     'menu' => [
-        'MANAGE CERTIFICATES',
+        'MANAGE INSTRUCTORS',
         [
-            'text' => 'Create Certificate',
-            'url'  => 'admin/certificate/create',
+            'text' => 'Create Instructor',
+            'url'  => 'admin/instructor/create',
             'icon' => 'plus',
         ],
         [
-            'text' => 'View Certificates',
-            'url'  => 'admin/certificate',
+            'text' => 'View Instructors',
+            'url'  => 'admin/instructor',
             'icon' => 'eye',
         ],
         'MANAGE COURSES',
@@ -128,6 +128,7 @@ return [
             'url'  => 'admin/course',
             'icon' => 'eye',
         ],
+        
         'MANAGE STUDENTS',
         [
             'text' => 'Create Student',
@@ -139,17 +140,23 @@ return [
             'url'  => 'admin/student',
             'icon' => 'eye',
         ],
-        'MANAGE INSTRUCTORS',
+        'MANAGE CERTIFICATES',
         [
-            'text' => 'Create Instructor',
-            'url'  => 'admin/instructor/create',
+            'text' => 'Create Certificate',
+            'url'  => 'admin/certificate/create',
             'icon' => 'plus',
         ],
         [
-            'text' => 'View Instructors',
-            'url'  => 'admin/instructor',
+            'text' => 'Create Bulk Certificates',
+            'url'  => 'admin/certificate/bulk',
             'icon' => 'eye',
         ],
+        [
+            'text' => 'View Certificates',
+            'url'  => 'admin/certificate',
+            'icon' => 'eye',
+        ],
+        
 
     ],
 

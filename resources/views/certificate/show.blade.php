@@ -9,7 +9,7 @@
     <div class="container">
         <div class="col-md-9">
             <div class="panel panel-default">
-                <div class="panel-heading">certificate #{{ $certificate->id }}</div>
+                <div class="panel-heading">certificate #{{ $certificate->certificate_id }}</div>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-borderless">

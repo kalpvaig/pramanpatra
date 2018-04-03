@@ -23,7 +23,7 @@
     <div class="form-group {{ $errors->has('rating') ? 'has-error' : ''}}">
         {!! Form::label('rating', 'Rating Out of 10', ['class' => 'col-md-6 control-label']) !!}
         <div class="col-md-6">
-            {!! Form::number('rating', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            {!! Form::text('rating', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
             {!! $errors->first('rating', '<p class="help-block">:message</p>') !!}
         </div>
     </div>

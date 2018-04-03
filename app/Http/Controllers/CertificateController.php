@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CertificateController extends Controller
 {
@@ -19,6 +20,42 @@ class CertificateController extends Controller
         ->get();
         
         return view('certificate.index',compact('certificates'));
+    }
+
+    public function viewBulk(){
+        $courses = \App\Course::all();
+        return view('certificate.viewbulk',compact('courses'));
+    }
+
+    public function postBulk(Request $request){
+        $course_id = $request->course_id;
+
+        $file = $request->file('excel_file');
+        $excel_url = time().'.'.$file->getClientOriginalExtension();
+        $destinationPath = public_path('/tmp');
+        $file->move($destinationPath, $excel_url);
+
+        $fullPath = $destinationPath.'/'.$excel_url;
+
+        $data = new \App\Certificate;
+        $certis = array();
+
+        $reader = Excel::load($fullPath);
+
+        foreach ($reader->toArray() as $row) {
+            $student = \App\Student::Create($row);
+            $row += ['student_id' => $student->id]; 
+            $row += ['course_id' => $course_id];
+            $generator = new RandomStringGenerator;
+            $tokenLength = 10;
+            $token = $generator->generate($tokenLength);
+            $row += ['certification_number' => $token];
+            \App\Certificate::Create($row);
+            $certis[] = $row;
+        }
+
+        return view('certificate.bulkcerti',compact('certis'));
+
     }
 
     public function create(){
@@ -50,7 +87,7 @@ class CertificateController extends Controller
         $certificate = \DB::table('certificates')
         ->join('students','students.id','=','student_id')
         ->join('courses','courses.id','=','course_id')
-        ->select('courses.name as course_name', 'students.photo_url as student_photo_url', 'certificates.id as id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','certificates.valid_from' )
+        ->select('courses.name as course_name','certificates.id as certificate_id', 'students.photo_url as student_photo_url', 'certificates.id as id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','certificates.valid_from' )
         ->where('certificates.id','=',$id)
         ->first();
 

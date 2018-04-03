@@ -37,10 +37,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'CertificateController@index');
         Route::get('/create','CertificateController@create');
         Route::post('/create','CertificateController@postCreate');
+        Route::get('/bulk','CertificateController@viewBulk');
+        Route::post('/bulk', 'CertificateController@postBulk');
         Route::get('/{id}','CertificateController@show');
         Route::get('/{id}/edit','CertificateController@edit');
         Route::patch('/{id}','CertificateController@postEdit');
         Route::delete('/{id}','CertificateController@delete');
+
+        
     });
 
     Route::group(['prefix' => 'student'], function () {

@@ -16,7 +16,7 @@ class CreateCertificates extends Migration
         Schema::create('certificates', function (Blueprint $table) {
             $table->increments('id');
             $table->string('certification_number');
-            $table->integer('rating')->nullable();
+            $table->string('rating')->nullable();
             $table->text('comment')->nullable();
             $table->datetime('valid_from');
             $table->integer('student_id')->unsigned();
