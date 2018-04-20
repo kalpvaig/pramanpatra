@@ -40,6 +40,14 @@
         </div>
     </div>
 
+    <div class="form-group {{ $errors->has('fathersname') ? 'has-error' : ''}}">
+        {!! Form::label('fathersname', 'Fathers Name', ['class' => 'col-md-4 control-label']) !!}
+        <div class="col-md-6">
+            {!! Form::date('fathersname', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            {!! $errors->first('fathersname', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+
     <div class="form-group {{ $errors->has('phone1') ? 'has-error' : ''}}">
         {!! Form::label('phone1', 'Phone ', ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
@@ -64,13 +72,21 @@
         </div>
     </div>
     
-    <div class="form-group {{ $errors->has('enrolled_date') ? 'has-error' : ''}}">
-            {!! Form::label('enrolled_date', 'Enrolled Date', ['class' => 'col-md-4 control-label']) !!}
-            <div class="col-md-6">
-                {!! Form::date('enrolled_date', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-                {!! $errors->first('enrolled_date', '<p class="help-block">:message</p>') !!}
-            </div>
+    <div class="form-group {{ $errors->has('start_date') ? 'has-error' : ''}}">
+        {!! Form::label('start_date', 'Start Date', ['class' => 'col-md-4 control-label']) !!}
+        <div class="col-md-6">
+            {!! Form::date('start_date', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            {!! $errors->first('start_date', '<p class="help-block">:message</p>') !!}
         </div>
+    </div>
+
+    <div class="form-group {{ $errors->has('end_date') ? 'has-error' : ''}}">
+        {!! Form::label('end_date', 'End Date', ['class' => 'col-md-4 control-label']) !!}
+        <div class="col-md-6">
+            {!! Form::date('end_date', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            {!! $errors->first('end_date', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
 
     <div class="form-group {{ $errors->has('verification_no') ? 'has-error' : ''}}">
         {!! Form::label('verification_no', 'Verification Number / Social Security Number / Adhar Number', ['class' => 'col-md-4 control-label']) !!}

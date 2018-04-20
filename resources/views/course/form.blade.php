@@ -40,6 +40,15 @@
         </div>
     </div>
 
+
+    <div class="form-group {{ $errors->has('venue') ? 'has-error' : ''}}">
+        {!! Form::label('venue', 'Venue', ['class' => 'col-md-4 control-label']) !!}
+        <div class="col-md-6">
+            {!! Form::text('venue',null, ['class' => 'form-control']) !!}
+            {!! $errors->first('venue', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+
     <div class="form-group">
         <label for="duration_type" class="col-md-4" style="text-align:right;">Instructor</label>
         <div class="col-md-6">

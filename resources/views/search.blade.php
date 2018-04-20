@@ -16,7 +16,7 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Roboto', sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
@@ -66,6 +66,9 @@
         </style>
     </head>
     <body>
+    <nav style="margin:0 auto; text-align:center;width:100%">
+            <img src="{{asset('images/logo.png') }}" />
+    </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -79,15 +82,18 @@
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <div class="col-md-4">
-                            <img src='{{ asset("images/$certificate->photo_url") }}' height="250" class="img img-response" />
+                        <h3>{{$certificate->student_name}}</h3>
+                            <p> 
+                                <b>Rating </b><span class="fa fa-stars"></span> &nbsp;{{$certificate->rating}}  <br />
+                            </p>
                         </div>
                         <div class="col-md-8">
-                            <h3>{{$certificate->student_name}}</h3>
-                            <p>
-                                <span class="fa fa-envelope"></span> &nbsp;<b>{{$certificate->email}}</b> <br />
-                                
-                                Rating <span class="fa fa-stars"></span> &nbsp;<b>{{$certificate->rating}} / 10</b> <br />
-                            </p>
+                            <table class="table table-striped">
+                                <tr><th>Event Name</th><td>{{$certificate->eventname}}</td></tr>
+                                <tr><th>Event Venue</th><td>{{$certificate->venue}}</td></tr>
+                                <tr><th>Start Date</th><td>{{$certificate->start_date}}</td></tr>
+                                <tr><th>End Date</th><td>{{$certificate->end_date}}</td></tr>
+                            </table>
                         </div>
                     </div>
                 </div>

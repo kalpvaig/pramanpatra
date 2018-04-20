@@ -16,7 +16,7 @@ class CertificateController extends Controller
         $certificates = \DB::table('certificates')
         ->join('students','students.id','=','student_id')
         ->join('courses','courses.id','=','course_id')
-        ->select('courses.name as course_name','certificates.id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','certificates.valid_from' )
+        ->select('courses.name as course_name','certificates.id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','students.start_date','students.end_date' )
         ->get();
         
         return view('certificate.index',compact('certificates'));
@@ -87,7 +87,7 @@ class CertificateController extends Controller
         $certificate = \DB::table('certificates')
         ->join('students','students.id','=','student_id')
         ->join('courses','courses.id','=','course_id')
-        ->select('courses.name as course_name','certificates.id as certificate_id', 'students.photo_url as student_photo_url', 'certificates.id as id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','certificates.valid_from' )
+        ->select('courses.name as course_name','certificates.id as certificate_id', 'students.photo_url as student_photo_url', 'certificates.id as id','students.name as student_name','students.phone1 as student_phone','certificates.certification_number','certificates.rating','students.start_date','students.end_date','courses.venue' )
         ->where('certificates.id','=',$id)
         ->first();
 
@@ -154,7 +154,7 @@ class RandomStringGenerator
             $token .= $this->alphabet[$randomKey];
         }
 
-        return $token;
+        return strtoupper($token);
     }
 
     /**

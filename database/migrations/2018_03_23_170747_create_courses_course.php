@@ -21,6 +21,7 @@ class CreateCoursesCourse extends Migration
             $table->integer('duration_days')->nullable();
             $table->tinyinteger('duration_type')->default(0);
             $table->integer('instructor_id')->unsigned();
+            $table->string('venue')->nullable();
 
             $table->foreign('instructor_id')
                 ->references('id')

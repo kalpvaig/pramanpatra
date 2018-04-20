@@ -28,7 +28,8 @@
                                         <th>Student Name</th>
                                         <th>Student Phone</th>
                                         <th>Course Name</th>
-                                        <th>Valid From</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
                                         <th>Rating</th>
                                         <th>Action</th>
                                     </tr>
@@ -38,7 +39,8 @@
                                         <td>{{ $item->student_name }}</td>
                                         <td>{{ $item->student_phone }}</td>
                                         <td>{{ $item->course_name }}</td>
-                                        <td>{{ $item->valid_from }}</td>
+                                        <td>{{ $item->start_date }}</td>
+                                        <td>{{ $item->end_date }}</td>
                                         <td>{{ $item->rating }}</td>
                                         <td width="300px">
                                             <div class="col-md-4">

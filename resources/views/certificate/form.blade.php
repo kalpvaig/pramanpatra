@@ -35,11 +35,3 @@
             {!! $errors->first('comment', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
-
-    <div class="form-group {{ $errors->has('valid_from') ? 'has-error' : ''}}">
-        {!! Form::label('valid_from', 'Valid From', ['class' => 'col-md-6 control-label']) !!}
-        <div class="col-md-6">
-            {!! Form::date('valid_from', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-            {!! $errors->first('valid_from', '<p class="help-block">:message</p>') !!}
-        </div>
-    </div>

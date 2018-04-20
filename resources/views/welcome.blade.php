@@ -66,6 +66,9 @@
         </style>
     </head>
     <body>
+    <nav style="margin:0 auto; text-align:center;width:100%">
+            <img src="{{asset('images/logo.png') }}" />
+    </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

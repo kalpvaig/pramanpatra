@@ -15,7 +15,7 @@ class IndexController extends Controller
             $certificate = \DB::table('certificates')
             ->join('students','students.id','=','student_id')
             ->join('courses','courses.id','=','course_id')
-            ->select('courses.name as course_name','students.email as email','certificates.id','students.name as student_name','students.photo_url as photo_url','certificates.certification_number','certificates.rating','certificates.valid_from' )
+            ->select('courses.name as course_name','students.email as email','certificates.id','students.name as student_name','students.photo_url as photo_url','certificates.certification_number','certificates.rating','students.start_date','students.end_date','courses.name as eventname','courses.venue' )
             ->where('certificates.certification_number','=',$certification_number)
             ->first();
             return view('search',compact('certificate'));

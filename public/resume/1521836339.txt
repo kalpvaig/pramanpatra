@@ -1,6 +1,0 @@
-New Skill To Master
-
->React.JS
->MVC .net Core 2.0 [[Check Usage Over Java]]
->Flutter
-

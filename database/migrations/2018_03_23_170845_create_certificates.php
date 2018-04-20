@@ -18,7 +18,6 @@ class CreateCertificates extends Migration
             $table->string('certification_number');
             $table->string('rating')->nullable();
             $table->text('comment')->nullable();
-            $table->datetime('valid_from');
             $table->integer('student_id')->unsigned();
             $table->integer('course_id')->unsigned();
 

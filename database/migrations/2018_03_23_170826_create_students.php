@@ -20,12 +20,14 @@ class CreateStudents extends Migration
             $table->string('phone1')->nullable();
             $table->string('phone2')->nullable();
             $table->string('address')->nullable();
-            $table->integer('age');
-            $table->string('gender');
+            $table->string('fathersname')->nullable();
+            $table->integer('age')->nullable();
+            $table->string('gender')->nullable();
             $table->string('verification_doc_url')->nullable();
             $table->string('verification_no')->nullable();
             $table->string('photo_url')->nullable();
-            $table->datetime('enrolled_date');
+            $table->date('start_date');
+            $table->date('end_date');
 
             $table->string('social1_name')->nullable();
             $table->string('social1_url')->nullable();

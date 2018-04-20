@@ -14,7 +14,7 @@ class CourseController extends Controller
 
     public function index(){
 
-        $courses = \App\Course::join('instructors','instructors.id','=','instructor_id')->select('instructors.name as instructor_name','courses.name','courses.description','courses.id','courses.duration_type','courses.duration_days','courses.duration_hours' )->get();
+        $courses = \App\Course::join('instructors','instructors.id','=','instructor_id')->select('instructors.name as instructor_name','courses.name','courses.description','courses.id','courses.duration_type','courses.duration_days','courses.duration_hours','courses.venue' )->get();
         return view('course.index',compact('courses'));
     }
 
