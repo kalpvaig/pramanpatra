@@ -24,10 +24,10 @@ class CreateStudents extends Migration
             $table->integer('age')->nullable();
             $table->string('gender')->nullable();
             $table->string('verification_doc_url')->nullable();
-            $table->string('verification_no')->nullable();
+            $table->string('id_proof')->nullable();
             $table->string('photo_url')->nullable();
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
 
             $table->string('social1_name')->nullable();
             $table->string('social1_url')->nullable();

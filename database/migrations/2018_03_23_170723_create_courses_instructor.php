@@ -16,17 +16,17 @@ class CreateCoursesInstructor extends Migration
         Schema::create('instructors', function (Blueprint $table) {
             
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('email')->nullable();
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('verification_doc_url')->nullable();
             $table->string('verification_no')->nullable();
             $table->string('resume_url')->nullable();
             $table->string('photo_url')->nullable();
-            $table->integer('age');
-            $table->string('gender');
+            $table->integer('age')->nullable();
+            $table->string('gender')->nullable();
 
             $table->string('social1_name')->nullable();
             $table->string('social1_url')->nullable();

@@ -23,7 +23,7 @@
             }
 
             .full-height {
-                height: 100vh;
+               
             }
 
             .flex-center {
@@ -61,7 +61,7 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 10px;
             }
         </style>
     </head>
@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="panel panel-primary">
-                    <div class="panel-body">
+                    <div class="panel-body" id="data">
                         <div class="col-md-4">
                         <h3>{{$certificate->student_name}}</h3>
                             <p> 
@@ -95,9 +95,29 @@
                                 <tr><th>End Date</th><td>{{$certificate->end_date}}</td></tr>
                             </table>
                         </div>
+                        <img src="/images/verified.png"  style="width:150px; position: absolute;right: 30%;top: 60%;float: right" />
+                        <button class="btn btn-primary" onclick="printContent()"> Print Page </button>
                     </div>
                 </div>
             </div>
         </div>
+        <script
+              src="https://code.jquery.com/jquery-3.3.1.min.js"
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+
+        <script >
+            function printContent(el){
+            var restorepage = $('body').html();
+            var printcontent = $('#data').clone();
+            
+            $('body').empty().html(printcontent);
+            
+            window.print();
+            
+            $('body').html(restorepage);
+            }
+        </script>
     </body>
 </html>
+

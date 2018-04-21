@@ -23,7 +23,7 @@
                             <span class="fa fa-user"></span> &nbsp; {{$student->age}}<br />
                             <span class="fa fa-female"></span> &nbsp;{{$student->gender}} <br />
                             <a href="{{$student->social1_url}}" class="btn btn-primary">{{$student->social1_name}}</a> &nbsp; <a href="{{$student->social2_url}}" class="btn btn-info">{{$student->social2_name}}</a> &nbsp; <a href="{{$student->social3_url}}" class="btn btn-success">{{$student->social3_name}}</a><br /><br />
-                            <b>Verification Number: </b>&nbsp; {{$student->verification_no}}  <br />
+                            <b>Verification Number: </b>&nbsp; {{$student->id_proof}}  <br />
                             <a href='{{ asset("verification_docs/$student->verification_doc_url") }}' class="btn btn-primary">Verification Docs</a> <br />
                         </p>
                     </div>              

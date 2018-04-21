@@ -25,7 +25,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <a href="/tmp/sample.xlsx" class="btn btn-success">Download Sample Excel </a>
+                        <a href="/tmp/sample3.xlsx" class="btn btn-success">Download Sample Excel </a>
                         {!! Form::open(['url' => '/admin/certificate/bulk', 'class' => 'form-horizontal', 'files' => true]) !!}
                                 
                             <div class="form-group" >

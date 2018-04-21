@@ -88,11 +88,11 @@
         </div>
     </div>
 
-    <div class="form-group {{ $errors->has('verification_no') ? 'has-error' : ''}}">
-        {!! Form::label('verification_no', 'Verification Number / Social Security Number / Adhar Number', ['class' => 'col-md-4 control-label']) !!}
+    <div class="form-group {{ $errors->has('id_proof') ? 'has-error' : ''}}">
+        {!! Form::label('id_proof', 'ID Proof / Social Security Number / Adhar Number', ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
-            {!! Form::text('verification_no', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
-            {!! $errors->first('verification_no', '<p class="help-block">:message</p>') !!}
+            {!! Form::text('id_proof', null, ('' == 'required') ? ['class' => 'form-control', 'required' => 'required'] : ['class' => 'form-control']) !!}
+            {!! $errors->first('id_proof', '<p class="help-block">:message</p>') !!}
         </div>
     </div>
 
