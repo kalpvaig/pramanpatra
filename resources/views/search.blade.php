@@ -81,6 +81,7 @@
             <div class="content">
                 <div class="panel panel-primary">
                     <div class="panel-body" id="data">
+                        <img src="/images/logo.png" style="text-align: center;margin:0 auto;">
                         <div class="col-md-4">
                         <h3>{{$certificate->student_name}}</h3>
                             <p> 
@@ -95,8 +96,10 @@
                                 <tr><th>End Date</th><td>{{$certificate->end_date}}</td></tr>
                             </table>
                         </div>
+                        <div class="col-md-12"><button class="btn btn-primary" onclick="printContent()"> Print Page </button>
+                        </div>
                         <img src="/images/verified.png"  style="width:150px; position: absolute;right: 30%;top: 60%;float: right" />
-                        <button class="btn btn-primary" onclick="printContent()"> Print Page </button>
+                        
                     </div>
                 </div>
             </div>
